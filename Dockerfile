@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-MAINTAINER ArunaLakmal <aruna.lakmal@techcrumble.net>
+MAINTAINER ArunaLakmal <aruna.lakmal@tc.io>
 
 ENV ANSIBLE_HOST_KEY_CHECKING false
 
