@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
     openssh-client\
     git \
     ca-certificates \
+    build-essential  \
     && apt-get install -y python-pip \
     && pip install ansible \
     && pip install awscli \
