@@ -1,9 +1,6 @@
 name: GitLab Deployment Image
 
 on:
-  push:
-    paths:
-      - '*'
   pull_request:
     paths:
     - '*'
