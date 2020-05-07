@@ -1,9 +1,12 @@
 name: GitLab Deployment Image
 
 on:
+  push:
+    branches:
+      - master
   pull_request:
-    paths:
-    - '*'
+    branches:
+      - master
       
 jobs:
   build:
