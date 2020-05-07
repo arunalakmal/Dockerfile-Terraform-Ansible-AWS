@@ -15,5 +15,5 @@ jobs:
     - name: Build & Push Image
       run: |
         docker login --username=arunalakmal --password=${{ secrets.TCDockerCred }}
-        docker image build -t arunalakmal/tc-terraform-ansible-aws:latest .
-        docker push arunalakmal/tc-terraform-ansible-aws:latest
+        docker image build -t arunalakmal/tc-terraform-ansible-aws:v1.0.0 .
+        docker push arunalakmal/tc-terraform-ansible-aws:v1.0.0
