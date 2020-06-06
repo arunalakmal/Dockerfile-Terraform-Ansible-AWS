@@ -19,6 +19,8 @@ RUN apt-get update && apt-get install -y \
     && pip install awscli \
     && rm -rf /var/lib/apt/lists/*
 
+RUN dpkg -i /path/to/inspec.deb
+
 RUN wget --quiet https://releases.hashicorp.com/terraform/0.12.16/terraform_0.12.16_linux_amd64.zip \
     && unzip terraform_0.12.16_linux_amd64.zip \
     && mv terraform /usr/local/bin \
