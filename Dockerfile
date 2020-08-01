@@ -19,7 +19,9 @@ RUN apt-get update && apt-get install -y \
     && pip install awscli \
     && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get install -y openssh-server && \
+RUN apt-get remove -y openssh-client && \
+    apt-get update -y && \
+    apt-get install -y openssh-server && \
     mkdir -p /run/sshd
 
 EXPOSE 22
