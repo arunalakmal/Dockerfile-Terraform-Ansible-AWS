@@ -6,3 +6,5 @@
 This custom docker image is used tio run my GitLab piplines and, master pull will run the GitHub workflow and push image to the Docker hub. 
 
 Blog: https://www.techcrumble.net
+
+Complete post article can be fount [here](https://www.techcrumble.net/2020/05/simple-github-action-to-build-the-docker-images/)
