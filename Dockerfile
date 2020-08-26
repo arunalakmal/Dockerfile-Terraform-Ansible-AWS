@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
     git \
     ca-certificates \
     build-essential  \
+    jq \
     && apt-get install -y python-pip \
     && pip install ansible \
     && pip install awscli \
