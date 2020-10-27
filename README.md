@@ -7,4 +7,4 @@ This custom docker image is used tio run my GitLab piplines and, master pull wil
 
 Blog: https://www.techcrumble.net
 
-Complete post article can be fount [here](https://www.techcrumble.net/2020/05/simple-github-action-to-build-the-docker-images/)
+Complete post article can be found [here](https://www.techcrumble.net/2020/05/simple-github-action-to-build-the-docker-images/)
