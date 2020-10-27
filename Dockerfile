@@ -29,4 +29,4 @@ RUN wget --quiet https://releases.hashicorp.com/terraform/0.12.16/terraform_0.12
 
 RUN wget --quiet https://github.com/gruntwork-io/terragrunt/releases/download/v0.25.5/terragrunt_linux_amd64 \
     && chmod +x terragrunt_linux_amd64 \
-    && mv terragrunt_linux_amd64 /usr/local/terragrunt
+    && mv terragrunt_linux_amd64 /usr/local/bin/terragrunt
