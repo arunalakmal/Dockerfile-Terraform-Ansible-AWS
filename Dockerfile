@@ -26,3 +26,6 @@ RUN wget --quiet https://releases.hashicorp.com/terraform/0.12.16/terraform_0.12
     && unzip terraform_0.12.16_linux_amd64.zip \
     && mv terraform /usr/local/bin \
     && rm terraform_0.12.16_linux_amd64.zip
+
+RUN wget --quiet https://github.com/gruntwork-io/terragrunt/releases/download/v0.25.5/terragrunt_linux_amd64 \
+    && mv terragrunt_linux_amd64 /usr/local/terragrunt
