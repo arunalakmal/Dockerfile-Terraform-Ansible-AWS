@@ -15,10 +15,29 @@ RUN apt-get update && apt-get install -y \
     ca-certificates \
     build-essential  \
     jq \
-    && apt-get install -y python-pip \
-    && pip install ansible \
-    && pip install awscli \
+    make \
+    python3 \
     && rm -rf /var/lib/apt/lists/*
+    
+RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
+    && python3 get-pip.py
+    
+RUN pip install \
+    botocore \
+    boto \
+    boto3 \
+    ansible \
+    awscli \
+    && ansible-galaxy collection install community.aws
+    
+RUN curl -s -L -o /bin/cfssl https://pkg.cfssl.org/R1.2/cfssl_linux-amd64 \
+    && curl -s -L -o /bin/cfssljson https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64 \
+    && curl -s -L -o /bin/cfssl-certinfo https://pkg.cfssl.org/R1.2/cfssl-certinfo_linux-amd64 \
+    && chmod +x /bin/cfssl*
+    
+RUN wget https://storage.googleapis.com/kubernetes-release/release/v1.18.9/bin/linux/amd64/kubectl \
+    && chmod +x kubectl \
+    && mv kubectl /usr/local/bin/
 
 RUN curl https://omnitruck.chef.io/install.sh | bash -s -- -P inspec
 
