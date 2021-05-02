@@ -6,6 +6,7 @@ ENV ANSIBLE_HOST_KEY_CHECKING false
 
 RUN apt-get update && apt-get install -y \
     wget \
+    iproute2 \
     vim \
     unzip \
     curl \
