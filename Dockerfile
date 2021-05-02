@@ -19,8 +19,10 @@ RUN apt-get update && apt-get install -y \
     python3 \
     && rm -rf /var/lib/apt/lists/*
     
-RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
-    && python3 get-pip.py
+# RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
+#     && python3 get-pip.py
+
+RUN apt install python3-pip
     
 RUN pip install \
     botocore \
