@@ -25,7 +25,7 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get update \
     && apt install python3-pip -y
     
-RUN pip install \
+RUN pip3 install \
     botocore \
     boto \
     boto3 \
