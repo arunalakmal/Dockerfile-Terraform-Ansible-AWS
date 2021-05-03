@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
     openssh-client\
     git \
     ca-certificates \
+    software-properties-common \
     build-essential  \
     jq \
     make \
@@ -22,6 +23,10 @@ RUN apt-get update && apt-get install -y \
     
 # RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
 #     && python3 get-pip.py
+
+RUN apt-add-repository ppa:ansible/ansible -y \
+    && apt-get update \
+    && apt-get install ansible -y
 
 RUN apt-get update \
     && apt install python3-pip -y
