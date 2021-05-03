@@ -1,11 +1,12 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
-MAINTAINER ArunaLakmal <aruna.lakmal@tc.io>
+LABEL maintainer="aruna.lakmal@tc.io"
 
 ENV ANSIBLE_HOST_KEY_CHECKING false
 
 RUN apt-get update && apt-get install -y \
     wget \
+    iproute2 \
     vim \
     unzip \
     curl \
@@ -13,16 +14,24 @@ RUN apt-get update && apt-get install -y \
     openssh-client\
     git \
     ca-certificates \
+    software-properties-common \
     build-essential  \
     jq \
     make \
     python3 \
     && rm -rf /var/lib/apt/lists/*
     
-RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
-    && python3 get-pip.py
+# RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
+#     && python3 get-pip.py
+
+RUN apt-add-repository ppa:ansible/ansible -y \
+    && apt-get update \
+    && apt-get install ansible -y
+
+RUN apt-get update \
+    && apt install python3-pip -y
     
-RUN pip install \
+RUN pip3 install \
     botocore \
     boto \
     boto3 \
