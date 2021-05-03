@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-MAINTAINER ArunaLakmal <aruna.lakmal@tc.io>
+LABEL maintainer="aruna.lakmal@tc.io"
 
 ENV ANSIBLE_HOST_KEY_CHECKING false
 
