@@ -12,7 +12,7 @@ appName = "ar-app"
 
 pipeline {
     // Use the 'maven' Jenkins agent image which is provided with OpenShift 
-//    agent { label "custom" }
+    agent { label "maven" }
     stages {
         stage("Checkout") {
             steps {
